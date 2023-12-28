@@ -4,6 +4,7 @@ title: "Publication"
 permalink: /publication/
 author_profile: true
 use_math: true
+classes: wide
 ---
 
 Yifan Li, **Byung-Kuk Seo**, and Kangsoo Kim. Exploring industrial uses of virtually altering the physical world (2023), *IEEE Conference on Virtual Reality and 3D User Interfaces Workshops (VRW) - International Workshop on eXtended Reality for Industrial and Occupational Support (XRIOS)*.  
