@@ -2,6 +2,8 @@
    BASE ELEMENTS
    ========================================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Anek+Gurmukhi&display=swap');
+
 html {
   /* sticky footer fix */
   position: relative;
@@ -12,7 +14,7 @@ body {
   margin: 0;
   padding: 0;
   color: $text-color;
-  font-family: $global-font-family;
+  font-family: "Anek Gurmukhi";
   line-height: 1.5;
 
   &.overflow--hidden {
