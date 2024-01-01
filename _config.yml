@@ -230,6 +230,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll/scholar
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -238,6 +239,7 @@ whitelist:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll/scholar
 
 
 # Archives
@@ -290,3 +292,26 @@ defaults:
       comments: # true
       share: true
       related: true
+
+scholar:
+  style: ./_bibliography/ieeetrans.csl
+  locale: en
+
+  sort_by: none
+  order: ascending
+
+  group_by: none
+  group_order: ascending
+
+  source: ./_bibliography
+  bibliography: papers.bib
+  bibliography_template: "bibtemplate"
+
+  replace_strings: true
+  join_strings:    true
+
+  details_dir:    bibliography
+  details_layout: bibtex.html
+  details_link:   Details
+
+  query: "@*"

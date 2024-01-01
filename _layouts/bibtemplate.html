@@ -1,0 +1,23 @@
+---
+---
+{{reference | replace_first: 'Byung-Kuk Seo', '<b>Byung-Kuk Seo</b>'}}
+
+{% if entry.doi %}
+<button style="border: 0; background: transparent; outline:none;">
+<img src="/assets/icon/doi.svg" width="20" height="20">
+</button>
+{% endif %}
+
+{% if entry.suppl %}
+<button style="border: 0; background: transparent; outline:none;">
+<img src="/assets/icon/video.svg" width="20" height="20">
+</button>
+{% endif %}
+
+<button class="btn btnId btnPub--BibTex" id="b_{{key}}-bibtex" style="border: 0; background: transparent; outline:none;">
+<img src="/assets/icon/bibtex.svg" width="20" height="20">
+</button>
+
+<div class="dropDownBibtex" id="{{key}}-bibtex" style="display: none;">
+<pre>{{entry.bibtex}}</pre>
+</div>
