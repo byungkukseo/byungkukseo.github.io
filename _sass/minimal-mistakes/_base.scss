@@ -67,7 +67,7 @@ small,
 
 p {
   margin-bottom: 1.3em;
-      font-size: 20px;
+      font-size: 17px;
 }
 
 u,
@@ -156,7 +156,8 @@ code,
 kbd,
 samp,
 pre {
-  font-family: $monospace;
+  font-family: "consolas";
+  font-size: 12px;
 }
 
 pre {
