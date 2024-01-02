@@ -7,4 +7,4 @@ use_math: true
 classes: wide
 ---
 
-{% bibliography -f papers %}
+{% raw %}{% bibliography -f papers %}{% endraw %}
