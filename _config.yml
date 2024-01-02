@@ -231,6 +231,7 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll/scholar
+  - gemfile
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -240,7 +241,7 @@ whitelist:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll/scholar
-
+  - gemfile
 
 # Archives
 #  Type
