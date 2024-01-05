@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "PUB"
+title: ""
 permalink: /publication/
 author_profile: true
 use_math: true
