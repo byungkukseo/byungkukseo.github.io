@@ -108,7 +108,10 @@
         <date variable="issued" form="text" prefix="(" suffix=")"/>
       </else-if>
       <else>
-        <date variable="issued" form="text"/>
+        <date variable="issued">
+          <date-part name="month" form="short" suffix=" "/>
+          <date-part name="year" />
+        </date>
       </else>
     </choose>
   </macro>
@@ -180,7 +183,7 @@
         <choose>
           <if variable="container-title" match="any">
             <group delimiter=" ">
-              <text term="In"/>
+              <text term="in"/>
               <text variable="container-title" font-style="italic"/>
             </group>
           </if>
@@ -298,9 +301,9 @@
   <macro name="collection">
     <choose>
       <if variable="collection-title" match="any">
-        <text term="in" suffix=" "/>
-        <group delimiter=", " suffix=". ">
-          <text variable="collection-title"/>
+          <!-- <text term="in" suffix=" "/> -->
+        <group delimiter=", " suffix=", ">
+          <text variable="collection-title" font-style="italic"/>
           <text variable="collection-number" prefix="no. "/>
           <text variable="volume" prefix="vol. "/>
         </group>
@@ -330,11 +333,11 @@
       <choose>
         <!-- Specific Formats -->
         <if type="article-journal">
-
             <text macro="title" suffix=". "/>
             <group delimiter=", ">
             <text variable="container-title" font-style="italic" form="short"/>
             <text macro="locators"/>
+            <text macro="publisher"/>
             <text macro="page"/>
             <text macro="issued"/>
             <text macro="status"/>
@@ -356,12 +359,13 @@
             <text macro="editor"/>
           </group>
           <text macro="collection"/>
-          <group delimiter=", " suffix=".">
-            <text macro="publisher"/>
+          <group delimiter=", " suffix=". ">
+            <text variable="publisher"/>
             <text macro="page"/>
             <text macro="issued"/>
             <text macro="status"/>
           </group>
+          <text variable="note" prefix="[" suffix="]"/>
           <text macro="access"/>
         </else-if>
         <else-if type="chapter">
@@ -440,14 +444,17 @@
           <text macro="access"/>
         </else-if>
         <else-if type="article-magazine article-newspaper broadcast interview manuscript map patent personal_communication song speech thesis webpage" match="any">
-          <group delimiter=", " suffix=".">
-            <text macro="title"/>
-            <text variable="container-title" font-style="italic"/>
-            <text macro="locators"/>
-            <text macro="publisher"/>
-            <text macro="page"/>
-            <text macro="issued"/>
-          </group>
+            <text variable="title" suffix=". "/>
+            <text term="presented at" suffix=" "/>
+            <text variable="container-title" font-style="italic" suffix=", "/>
+            <group delimiter=", " suffix=". ">
+              <text macro="locators"/>
+              <text variable="venue"/>
+              <text variable="publisher"/>
+              <!-- <text macro="page"/> -->
+              <text macro="issued"/>
+            </group>
+          <text variable="note" prefix="[" suffix="]"/>
           <text macro="access"/>
         </else-if>
         <else>
@@ -458,7 +465,8 @@
           </group>
           <text macro="collection"/>
           <group delimiter=", " suffix=".">
-            <text macro="publisher"/>
+            <text variable="venue"/>
+            <text variable="publisher"/>
             <text macro="page"/>
             <text macro="issued"/>
           </group>

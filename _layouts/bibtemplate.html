@@ -1,22 +1,28 @@
 ---
 ---
-{{reference | replace_first: 'Byung-Kuk Seo', '<b>Byung-Kuk Seo</b>'}}
+{{reference | replace_first: 'Byung-Kuk Seo', '<u>Byung-Kuk Seo</u>'}}
+
+{% if entry.ack %}
+<font face="consolas" size ="2" color="#b80000">{{entry.ack}}</font><br>
+{% endif %}
 
 {% if entry.doi %}
 <button style="border: 0; background: transparent; outline:none;">
-<img src="/assets/icon/doi.svg" width="20" height="20">
+<a href="https://doi.org/{{entry.doi}}"><img src="/assets/icon/doi.svg" width="25" height="25"></a>
 </button>
 {% endif %}
 
 {% if entry.suppl %}
 <button style="border: 0; background: transparent; outline:none;">
-<img src="/assets/icon/video.svg" width="20" height="20">
+<a href="{{entry.suppl}}"><img src="/assets/icon/video.svg" width="25" height="25"></a>
 </button>
 {% endif %}
 
+{% unless entry.howpublished %}
 <button class="btn btnId btnPub--BibTex" id="b_{{key}}-bibtex" style="border: 0; background: transparent; outline:none;">
-<img src="/assets/icon/bibtex.svg" width="20" height="20">
+<img src="/assets/icon/bibtex.svg" width="25" height="25">
 </button>
+{% endunless %}
 
 <div class="dropDownBibtex" id="{{key}}-bibtex" style="display: none;">
 <pre>{{entry.bibtex}}</pre>
